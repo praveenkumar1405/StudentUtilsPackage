@@ -13,3 +13,15 @@ def calculate_completion(completed, total):
 def format_task(title, subject):
     """Format a task description."""
     return f"{title.strip()} - Subject: {subject.strip()}"
+
+
+def get_task_priority(due_in_days):
+    """Return a priority label based on the due date."""
+    if due_in_days < 0:
+        return "Overdue"
+    elif due_in_days <= 2:
+        return "High"
+    elif due_in_days <= 7:
+        return "Medium"
+    else:
+        return "Low"
